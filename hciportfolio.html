@@ -46,6 +46,10 @@
 										<h1>HCI Personal Portfolio</h1>
 									</header>
 									<p>This is my personal portfolio page for the COMP4461 course. Please see the projects below.</p>
+									<ul>
+										<li><a href="#two">Project 1: Library Counter</a></li>
+										<li><a href="#three">Project 2: Quarantine Bot</a></li>
+									</ul>
 								</div>
 							</section>
 
@@ -128,6 +132,115 @@
 								</div>
 							</section>
 
+							
+							<section id="three">
+								<div class="inner">
+									<header class="major">
+										<h2>
+											Project 2
+										</h2>
+									</header>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/mDHa7RoePdo" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<p>In the second project, we implemented a working prototype / proof-of-concept quarantine chat bot.</p>
+									<h4>Needfindiing</h4>
+									<p>
+										In order to identify the needs of users in quarantine we had a brainstorming session. Both me and Linnea have been in quarantine before, 
+										so we gave our thoughts on what we thought would be useful. We decided that a practical and pragmatic chat bot may be the right choice, with
+										features such as being able to order food, get more information about tests and checking out as well as mental health resources available without 
+										pretending to be experts in the field.
+									</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-12"><span class="image fit"><img src="images/mindmapproj2.png" alt="" /></span></div>
+										</div>
+									</div>
+									<h4>Implementation</h4>
+									<p>
+										I suggested in our meeting session that we should take a divide and conquer approach to implementing this prototype by taking advantages of GitHubs 
+										branching features. I assigned myself to implement the food delivery system. I started by setting up the github repository and forking the tutorial 
+										repo. I then had a meeting with Linnea to make sure that we understood the Rasa concepts and could create a working prototype. I figured that the best 
+										way to approach the implementation was using modified test-driven development: I used usability testing in order to drive the development forward instead 
+										of only as an evaluation tool. 
+									</p>
+									<h5>version 1.0</h5>
+									<p>
+										My first working ordering system was very bare bones. Firstly, there was no way for me to validate the slots of the dish and the drink. Secondly, 
+										the bot would stop running after a storyline was finished, which meant repeated use required refreshing the page. 
+									</p>
+									<h5>version 1.1</h5>
+									<p>
+										In version 1.1 I found a solution to both of the problems of v1.0. For the slot validation I implemented a validation function that was a custom action, 
+										and would run after the form was finished and had filled all slots. If the user missed a step, the bot would apologise and try to tell the user to restart. 
+										For the storyline restart, I added the action “action_restart” after some of my stories that would reset the bots storyline which solved that issue.
+									</p>
+									<h5>Usability Testing (v1.1)</h5>
+									<p>
+										For usability testing I asked two of my friends who have been in quarantine also to go on video-call. I shared my screen and asked them to try to order food. 
+										They told me what to input to the bot word for word and gave feedback on what they found confusing and would like to see improved. Here is a video showing the 
+										key moments of this test session:
+									</p>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/t36Kr6EsoXg" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<p>
+										I summarised their feedback into a shared Google Sheets, and for each pain-point I suggested a change. I ended up solving 3/4 of the problems that the users had in testing.
+									</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-12"><span class="image fit"><img src="images/usability_test_table.png" alt="" /></span></div>
+										</div>
+									</div>
+									<h5>version 1.2</h5>
+									<p>
+										For v1.2 I solved the validation problem by replacing my custom action with a dedicated FormValidation class and slot validation functions 
+										for both drinks and food. I added static methods to make it very easy to change the menu items without needing to rewrite other pieces of code. 
+										I also made it possible to skip ordering a drink and added additional training data where the model was lacking in detecting hungry intent. 
+										I also modified the front-end slightly to better suit the needs of our prototype.
+									</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-4"><span class="image fit"><img src="images/burger1.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/burger2.png" alt="" /></span></div>
+										</div>
+									</div>
+									<h5>version 1.3: final</h5>
+									<p>
+										I was responsible for merging the three branches together, which occasionally led to some conflicts. I ended up rewriting some code, but the 
+										functionality remained the same. The final version as well as a complete commit history of the project can be found in the link below:
+									</p>
+									<ul class="actions">
+										<li><a href="https://github.com/SimonRenblad/chat-bot-group-1" class="button next">GitHub Repo</a></li>
+									</ul>
+									<h2>Reflection</h2>
+									<p>
+										I think this project was very useful in teaching me how to use Rasa and to get started thinking about the potential use-cases for chat bots as a form of HCI. 
+										It also taught me the incredible value of user testing and user feedback, because in only 7 minutes I was able to catch mistakes I had not seen or things I 
+										did not think of that made v1.2 much better. Although we did not use a very formal approach, I believe that our chaotic way made sense given the time pressure. 
+										I believe that we should have started working on the project much earlier, and I am going to be very proactive in starting Project 3 right away to get the team 
+										thinking about ideas early. 
+									</p>
+									<p>
+										When it comes to the teamwork aspect, I believe that I contributed a lot to the team. My function is the most vertical out of the other functions. I implement form 
+										validation and the action server while the other functions do not. I also took on a leadership role, as seen in the screen capture below this paragraph I was often 
+										delegating tasks and making decisions. I am happy with my effort, but again I believe we should have started working on it earlier, because we could have used a more 
+										formalized approach to development.
+									</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-4"><span class="image fit"><img src="images/leadership_teamwork.png" alt="" /></span></div>
+										</div>
+									</div>
+									<p>
+										As for the prototype itself, I believe that my function still has a lot of potential for growth. I mentioned this in the presentation as well, but I would like to add 
+										functionality for multiple dishes and connect the bot to an external API that handles all the hotels orders. I also want to implement pricing and payment systems. 
+										I tried to find APIs for food delivery services such as foodpanda or deliveroo, however I was unable to find anything, so I decided it would be a task for the future. 
+										It has definetly given me an idea for future personal projects, because I believe a lot of applications could benefit from a food delivery API. I also would have liked 
+										to change the front-end layout more to differentiate it from the tutorial, but unfortunately nobody on the team was familar with React so we focused heavily on Rasa instead. 
+									</p>
+									<p>
+										In conclusion, this project has been very educational both as a developer and taking a leadership role. Although I would have liked to add more detailed features, I am still 
+										happy with our prototype. Looking forward to the last project!
+									</p>
+								</div>
+							</section>
 
 					</div>
 
