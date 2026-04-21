@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>simon renblad</title>
+  <title>Simon Renblad</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
 </head>
@@ -10,7 +10,7 @@
   <div class="window" style="position: absolute; inset: 0; height: 100; width: 100; overflow: hidden">
     <div class="title-bar">
       <div class="title-bar-text">
-        simon renblad
+        Simon Renblad
       </div>
       <div class="title-bar-controls">
         <button aria-label="Minimize"></button>
@@ -22,7 +22,7 @@
       <div class="window" style="grid-column: 1; grid-row: 1">
         <div class="title-bar">
           <div class="title-bar-text">
-            me
+            About me
           </div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -31,33 +31,29 @@
           </div>
         </div>
         <div class="window-body">
-            <h3>who am i?</h3>
+            <h3>Who am I?</h3>
             <p>
-            hi! i am simon renblad and i am a software engineer with experience in embedded systems and gui applications.
-            i live and breathe open source, and at the moment i am proud to be a part of the
-            <a href="https://github.com/m-labs/artiq">artiq</a> team providing a fully open source hardware, firmware and software
-            stack for quantum control systems. i am originally from sweden but i moved to shanghai for a few years before my time in
-            hong kong. i am graduated from the hong kong university of science and technology with an undergraduate degree in computer science.
-            out of work you can find me in the gym, at a bar or running along the harbourfront.
+            Hi! I am Simon Renblad and I am a Software Engineer with experience in Embedded Systems and GUI applications.
+            I live and breathe open source, and at the moment I am proud to be a part of the
+            <a href="https://github.com/m-labs/artiq">ARTIQ</a> team providing a fully open source hardware, firmware and software
+            stack for quantum control systems. I am originally from Sweden but I moved to Shanghai for a few years before my time in
+            Hong Kong. I am graduated from the Hong Kong University of Science and Technology with an undergraduate degree in Computer Science.
+            Out of work you can find me in the gym, at a bar or running along the harbourfront.
             </p>
-            <p>click on the buttons below to get in touch: </p>
-            <a href="https://github.com/SimonRenblad"><button>github</button></a>
-            <a href="www.linkedin.com/in/simon-renblad-code"><button>linkedin</button></a>
-            <h3>hire me</h3>
+            <p>Click on the buttons below to get in touch: </p>
+            <a href="https://github.com/SimonRenblad"><button>Github</button></a>
+            <a href="www.linkedin.com/in/simon-renblad-code"><button>Linkedin</button></a>
+            <h3>Hire me</h3>
             <p>
-            i am always open to hearing about new opportunities. my resume is provided below:
+            I am always open to hearing about new opportunities. My resume is provided below (outdated):
             </p>
-            <a href="./assets/Simon_Renblad_CV_2023.pdf"><button>resume</button></a>
-        </div>
-        <div class="status-bar">
-          <p class="status-bar-field">repositories: 107</p>
-          <p class="status-bar-field">contributions in last yr: 349</p>
+            <a href="./assets/Simon_Renblad_CV_2023.pdf"><button>Resume</button></a>
         </div>
       </div>
       <div class="window" style="grid-column: 2; grid-row: 1">
         <div class="title-bar">
           <div class="title-bar-text">
-            work
+            Work
           </div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -66,30 +62,47 @@
           </div>
         </div>
         <div class="window-body">
-            <h3>benovelty and openapihub</h3>
+            <h3>BeNovelty and OpenAPIHub</h3>
             <p>
-            i had a six month internship at benovelty in hkstp. benovelty, among other things, is the company behind openapihub.
-            my responsibilities at benovelty included:
+            I had a 6 month internship at BeNovelty in HKSTP. BeNovelty, among other things, is the company behind OpenAPIHub.
+            My responsibilities at BeNovelty included:
             </p>
             <ul>
-                <li>maintaining and deploying company webpages</li>
-                <li>implementing community apis and specifications</li>
-                <li>implementing client web application with midwayjs</li>
+                <li>Maintaining and deploying company webpages</li>
+                <li>Implementing community APIs and specifications</li>
+                <li>Implementing client web application with midwayjs</li>
             </ul>
-            <h3>m-labs</h3>
+            <h3>M-Labs</h3>
             <p>
-            m-labs develops hardware and software for quantum physics experiments, mainly targeting trapped ion applications
-            i am responsible for developing and maintaining the dashboard waveform feature and corresponding proxy, as well as
-            the interactive arguments feature. i have made additional contributions to the firmware of the kasli-soc, by adding support
-            for running idle kernels directly after flashing them & on reboot. additionally i fixed various subtle bugs while upgrading
-            the rust version, getting intimately familiar with the armv7 architecture.
+            M-Labs develops hardware and software for quantum physics experiments, mainly targeting trapped ion applications
+            Initially, I was responsible for developing and maintaining the dashboard waveform feature and corresponding proxy, as well as
+            the interactive arguments feature. I made additional contributions to the firmware of the Kasli-SoC, by adding support
+            for running idle kernels directly after flashing them & on reboot. Additionally I fixed various subtle bugs while upgrading
+            the Rust version, getting intimately familiar with the armv7 architecture. This eventually lead to a 46% speedup when sending
+            large integer and byte arrays to the device over RPC.
+            </p>
+            <p>
+            Recently, I worked on reverse engineering a USB driver for the ASI662MM astronomy camera. The existing drivers are closed source
+            and force needless multithreading. My implementation is small, simple with minimal dependencies. This was an interesting project
+            that tested my knowledge of Wireshark, Ghidra and the USB protocol.
+            </p>
+            <p>
+            After that, I implemented the serial communications protocol of CameraLink in ARTIQ. This required hands on debugging using an
+            oscilloscope and multimeter, as well as some light digital logic design. I proposed and implemented a simple format for
+            communicating with the camera from the ARTIQ kernels, with support for DRTIO (using another coredevice as a middleman). This was
+            an exercise in low-level Rust and FFI.
+            </p>
+            <p>
+            As of writing, I am currently working on bringing the Oxford `ndscan` project to ARTIQs new NAC3 compiler. Since the new compiler
+            is backwards incompatible and the `ndscan` project is out-of-house, there are a lot of subtle bugs and assumptions that need to be
+            revised and ironed out.
             </p>
         </div>
       </div>
       <div class="window" style="grid-column: 1; grid-row: 2">
         <div class="title-bar">
           <div class="title-bar-text">
-            school
+            School
           </div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -98,13 +111,13 @@
           </div>
         </div>
         <div class="window-body">
-            <p>i graduated with an undergratuate degree in computer science from hkust.</p>
-            <p>during my studies, i focused on exploring new programming paradigms as well as human computer interaction.</p>
-            <p>i had the opportunity to develop a transpiler, a bomberman copy in assembly, and an ai chatbot to improve quarantine.</p>
-            <p>i excelled in python and c++, scoring high on exams and assessments.</p>
-            <p>my final project is a collection of apis focused on making hong kong a sustainable smart city.</p>
-            <p>learn more about the project here:</p>
-            <a href="https://portal.fabrixapi.com/smart-sustainable-hk-hkssc-i34qx/home"><button>hkssc</button></a>
+            <p>I graduated with an undergratuate degree in Computer Science from HKUST.</p>
+            <p>During my studies, I focused on exploring new programming paradigms as well as Human-Computer Interaction.</p>
+            <p>I had the opportunity to develop a transpiler, a bomberman copy in MIPS assembly, and an AI chatbot to improve quarantine during COVID.</p>
+            <p>I excelled in Python and C++, scoring high on exams and assessments.</p>
+            <p>My final project is a collection of APISs focused on making Hong Kong a Sustainable Smart City.</p>
+            <p>Learn more about the project here:</p>
+            <a href="https://portal.fabrixapi.com/smart-sustainable-hk-hkssc-i34qx/home"><button>HKSSC</button></a>
         </div>
         <div class="status-bar">
           <p class="status-bar-field">graduating gpa: 3.4</p>
@@ -113,7 +126,7 @@
       <div class="window" style="grid-column: 2; grid-row: 2">
         <div class="title-bar">
           <div class="title-bar-text">
-            projects 
+            Projects 
           </div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -122,10 +135,12 @@
           </div>
         </div>
         <div class="window-body">
-            <p>i have a variety of personal projects listed on my github.</p>
+            <p>I have a variety of personal projects listed on my Github.</p>
             <ul>
+                <li><a href="https://github.com/SimonRenblad/QtFlashcardViewer">QtFlashcardViewer</a> is a small Anki / Quizlet alternative for markdown files</li>
+                <li><a href="https://github.com/SimonRenblad/audioviz">audioviz</a> is a live audio visualizer written in Python and OpenGL, inspired by CAVA</li>
                 <li><a href="https://github.com/SimonRenblad/menth">menth</a> is a simple CLI mental math trainer written in Rust</li>
-                <li><a href="https://github.com/SimonRenblad/punctuate">punctuate</a> is a simple filter to generate random punctuations for tools like <a href="https://github.com/max-niederman/ttyper">ttyper</a></li>
+                <li><a href="https://github.com/SimonRenblad/punctuate">punctuate</a> is a simple filter to generate random punctuations for tools like <a href="https://github.com/max-niederman/ttyper">ttyper</a> (which I maintain a separate fork of)</li>
                 <li><a href="https://github.com/SimonRenblad/cpp-term-barchart">barchart.h</a> is a single header file library for barcharts in ncurses</li>
                 <li><a href="https://github.com/SimonRenblad/world-graphs">world charts</a> visualizes world borders as simple graphs</li>
             </ul>
